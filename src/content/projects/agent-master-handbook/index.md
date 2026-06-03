@@ -7,7 +7,7 @@ tags:
 - AI
 - Agent
 - Handbook
-- Astro
+- Knowledge Base
 demoUrl: https://agent-master-handbook.vercel.app
 repoUrl: https://github.com/wilsonwangdev/agent-master-handbook
 image: "/thumbnails/agent-master-handbook.jpg"

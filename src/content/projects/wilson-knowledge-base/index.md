@@ -6,8 +6,8 @@ draft: false
 tags:
 - Knowledge Base
 - Quartz
-- Reading Notes
-- Open Source
+- Notes
+- Curation
 demoUrl: https://kb.wilsonhandbook.online
 repoUrl: https://github.com/wilsonwangdev/wilson-knowledge-base
 image: "/thumbnails/wilson-knowledge-base.jpg"

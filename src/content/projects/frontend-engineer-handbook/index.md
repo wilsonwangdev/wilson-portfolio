@@ -1,13 +1,13 @@
 ---
 title: "Frontend Engineer Handbook"
-summary: "前端工程师的进阶手册 — 覆盖工程化、性能优化、架构设计、源码解读等深度主题。"
+summary: "AI 时代前端学习路线 — 2026 必备知识、AI 可委托清单、动手实践。施工中，当前完成第 0–1 章。"
 date: "May 10 2026"
 draft: false
 tags:
 - Frontend
 - Engineering
 - Handbook
-- VitePress
+- Next.js
 demoUrl: https://fe.buildx.fun
 repoUrl: https://github.com/wilsonwangdev/frontend-engineer-handbook
 image: "/thumbnails/frontend-engineer-handbook.jpg"

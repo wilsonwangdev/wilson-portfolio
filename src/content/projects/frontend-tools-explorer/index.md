@@ -1,13 +1,13 @@
 ---
 title: "Frontend Tools Explorer"
-summary: "前端工具探索平台 — 交互式对比和评测各类前端工具、库和框架。"
+summary: "前端工具可搜索目录 — 40+ 精选工具的即时检索，覆盖 UI 框架、构建工具、测试、运行时等类别。"
 date: "Apr 20 2026"
 draft: false
 tags:
 - Frontend
 - Tools
-- Comparison
-- Interactive
+- Directory
+- Astro
 demoUrl: https://frontend-tools-explorer.vercel.app
 repoUrl: https://github.com/wilsonwangdev/frontend-tools-explorer
 image: "/thumbnails/frontend-tools-explorer.jpg"

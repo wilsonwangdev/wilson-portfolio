@@ -1,6 +1,6 @@
 ---
 title: "Agent Master Handbook"
-summary: "AI 智能体开发全栈指南 — 从入门到架构，覆盖 prompt engineering、tool use、memory、multi-agent 等核心主题。"
+summary: "AI agent 实战知识库与基础设施 — 概念指南、精选文章、可复用的 agent-ready 规范与模式。双语静态站点。"
 date: "May 20 2026"
 draft: false
 tags:

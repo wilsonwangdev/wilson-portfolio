@@ -1,13 +1,13 @@
 ---
 title: "Agent Master Companion"
-summary: "Agent Master 的 CLI 伴侣工具 — 提供本地化的 agent 编排、任务管理和工作流自动化能力。"
+summary: "macOS 菜单栏工具 — 浏览和管理各项目的 agent 指令文件（CLAUDE.md 等），附带便签本。完全离线，注重隐私。"
 date: "May 5 2026"
 draft: false
 tags:
-- CLI
+- macOS
 - Agent
 - Tool
-- Node.js
+- Swift
 demoUrl: https://agent-master-companion.vercel.app
 repoUrl: https://github.com/wilsonwangdev/agent-master-companion
 image: "/thumbnails/agent-master-companion.jpg"

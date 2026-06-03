@@ -1,13 +1,13 @@
 ---
 title: "Wilson Knowledge Base"
-summary: "个人知识库 — 通过 Agent 自动抓取、总结文章，构建结构化 Markdown 笔记，由 Quartz 渲染为静态站点。"
+summary: "AI 辅助整理的技术阅读笔记与开源项目发现 — 基于 Quartz，支持全文搜索、双向链接、RSS 与邮件订阅。"
 date: "May 15 2026"
 draft: false
 tags:
 - Knowledge Base
 - Quartz
-- Agent
-- Automation
+- Reading Notes
+- Open Source
 demoUrl: https://kb.wilsonhandbook.online
 repoUrl: https://github.com/wilsonwangdev/wilson-knowledge-base
 image: "/thumbnails/wilson-knowledge-base.jpg"

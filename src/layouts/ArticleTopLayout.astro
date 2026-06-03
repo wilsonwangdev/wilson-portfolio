@@ -1,6 +1,6 @@
 ---
 import type { CollectionEntry } from "astro:content"
-import { formatDate, readingTime } from "@lib/utils"
+import { readingTime } from "@lib/utils"
 
 type Props = {
   entry: CollectionEntry<"projects">
@@ -8,7 +8,7 @@ type Props = {
 
 const { entry } = Astro.props
 const { collection, data, body } = entry
-const { title, summary, date } = data
+const { title, summary } = data
 
 const demoUrl = collection === "projects" ? data.demoUrl : null
 const repoUrl = collection === "projects" ? data.repoUrl : null

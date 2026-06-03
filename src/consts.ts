@@ -2,7 +2,7 @@ import type { Site, Page, Links, Socials } from "@types"
 
 // Global
 export const SITE: Site = {
-  TITLE: "Wilson's Handbook",
+  TITLE: "Wilson",
   DESCRIPTION: "Personal portal — a curated index of projects, tools, and experiments.",
   AUTHOR: "Wilson",
 }

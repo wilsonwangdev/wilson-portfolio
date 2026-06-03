@@ -10,6 +10,7 @@ tags:
 - Interactive
 demoUrl: https://frontend-tools-explorer.vercel.app
 repoUrl: https://github.com/wilsonwangdev/frontend-tools-explorer
+image: "/thumbnails/frontend-tools-explorer.jpg"
 ---
 
 选型困难症的救星。Frontend Tools Explorer 提供交互式的工具对比界面，覆盖 bundler、test framework、state management、CSS solution 等类别。

@@ -10,6 +10,7 @@ tags:
 - Node.js
 demoUrl: https://agent-master-companion.vercel.app
 repoUrl: https://github.com/wilsonwangdev/agent-master-companion
+image: "/thumbnails/agent-master-companion.jpg"
 ---
 
 Agent Master Companion 是 Agent Master Handbook 的命令行伴侣，将手册中的概念转化为可直接使用的本地工具。支持任务模板、agent 配置管理、工作流编排等功能。

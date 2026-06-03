@@ -10,6 +10,7 @@ tags:
 - Automation
 demoUrl: https://kb.wilsonhandbook.online
 repoUrl: https://github.com/wilsonwangdev/wilson-knowledge-base
+image: "/thumbnails/wilson-knowledge-base.jpg"
 ---
 
 Wilson Knowledge Base 是个人知识管理系统的实践。核心流程：Agent 抓取感兴趣的文章 → 自动总结为结构化笔记 → Quartz v4 构建静态站点 → 部署到 Vercel（中国可访问）。

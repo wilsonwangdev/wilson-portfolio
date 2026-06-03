@@ -10,6 +10,7 @@ tags:
 - Astro
 demoUrl: https://agent-master-handbook.vercel.app
 repoUrl: https://github.com/wilsonwangdev/agent-master-handbook
+image: "/thumbnails/agent-master-handbook.jpg"
 ---
 
 Agent Master Handbook 是一份面向 AI 智能体开发者的系统性指南，涵盖了从 prompt engineering 基础到复杂 multi-agent 架构的全链路知识。站点基于 Astro Starlight 构建，支持中英双语，内容持续迭代。

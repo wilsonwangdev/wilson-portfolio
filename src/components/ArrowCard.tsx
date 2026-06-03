@@ -1,4 +1,4 @@
-import { formatDate, truncateText } from "@lib/utils"
+import { truncateText } from "@lib/utils"
 import type { CollectionEntry } from "astro:content"
 
 type Props = {
@@ -20,9 +20,6 @@ export default function ArrowCard({ entry, pill }: Props) {
               project
             </div>
           }
-          <div class="text-sm uppercase">
-            {formatDate(entry.data.date)}
-          </div>
         </div>
         <div class="font-semibold mt-3 text-black dark:text-white line-clamp-2">
           {entry.data.title}

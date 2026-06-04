@@ -12,6 +12,10 @@ tags:
 demoUrl: https://kb.wilsonhandbook.online
 repoUrl: https://github.com/wilsonwangdev/wilson-knowledge-base
 image: "/thumbnails/wilson-knowledge-base.jpg"
+body_en: |
+  A personal knowledge management practice. Core workflow: manual curation + AI-assisted organization → structured notes → Quartz v4.5.2 static site → deployed on Vercel.
+
+  Features: FlexSearch full-text search, Obsidian-style [[wikilinks]], Giscus comments, full-content RSS, email subscription integration, and reader mode. Bilingual with self-hosted fonts (no Google Fonts dependency).
 ---
 
 Wilson Knowledge Base 是个人知识管理的实践。核心流程：人工策展 + AI 辅助整理 → 结构化笔记 → Quartz v4.5.2 构建静态站点 → 部署 Vercel。

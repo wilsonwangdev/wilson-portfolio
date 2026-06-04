@@ -12,6 +12,10 @@ tags:
 demoUrl: https://agent-master-handbook.vercel.app
 repoUrl: https://github.com/wilsonwangdev/agent-master-handbook
 image: "/thumbnails/agent-master-handbook.jpg"
+body_en: |
+  A knowledge base and reusable infrastructure for agent practitioners, covering harness engineering, context engineering, and MCP. Includes skills, rules, specs, and patterns that can be embedded into any repository to make it agent-ready.
+
+  Built from scratch with only `marked` for Markdown rendering. Bilingual (EN/ZH) and dogfoods its own methodology.
 ---
 
 Agent Master Handbook 是一份面向 agent 实践者的知识体系与可复用基础设施，涵盖 harness engineering、context engineering、MCP 等核心概念。站点同时提供技能（skills）、规则（rules）、规范（specs）、模式（patterns）等可直接嵌入项目使仓库 agent-ready 的模块。

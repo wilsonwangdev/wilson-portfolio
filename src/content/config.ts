@@ -6,6 +6,7 @@ const projects = defineCollection({
     title: z.string(),
     summary: z.string(),
     summary_en: z.string().optional(),
+    body_en: z.string().optional(),
     date: z.coerce.date(),
     tags: z.array(z.string()),
     draft: z.boolean().optional(),

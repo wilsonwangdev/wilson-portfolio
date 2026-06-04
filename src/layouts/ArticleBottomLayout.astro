@@ -10,8 +10,9 @@ type Props = {
 
 const { entry, locale = "zh" } = Astro.props
 const t = useTranslations(locale)
-const { collection } = entry
+const { collection, data } = entry
 const { Content } = await entry.render()
+const isEnglish = locale === "en" && data.body_en
 
 // Get the next and prev entries (no wrapping — first/last get no link)
 const items = (await getCollection(collection))
@@ -24,7 +25,15 @@ const next = index < items.length - 1 ? items[index + 1] : null
 
 <div>
   <article>
-    <Content/>
+    {isEnglish ? (
+      <div class="space-y-3 text-black/75 dark:text-white/75">
+        {data.body_en!.split(/\n{2,}/).filter(Boolean).map(para => (
+          <p>{para.trim()}</p>
+        ))}
+      </div>
+    ) : (
+      <Content/>
+    )}
   </article>
   <div class="grid grid-cols-1 sm:grid-cols-2 gap-4">
     {prev ? (

@@ -12,6 +12,10 @@ tags:
 demoUrl: https://agent-master-companion.vercel.app
 repoUrl: https://github.com/wilsonwangdev/agent-master-companion
 image: "/thumbnails/agent-master-companion.jpg"
+body_en: |
+  A lightweight macOS menubar app for agent practitioners. Scans project folders to discover agent instruction, context, and rule files across 14 tools including Claude Code, Cursor, Copilot, and Codex.
+
+  Includes a scratch pad for jotting down thoughts while waiting for agent responses — select notes to compose your next prompt. Built with Swift + SwiftUI. Zero network requests.
 ---
 
 Agent Master Companion 是一个轻量级 macOS 菜单栏应用，专为 agent 实践者设计。支持扫描项目文件夹，发现并浏览 agent 相关的指令、上下文和规则文件，覆盖 Claude Code、Cursor、Copilot、Codex 等 14 种工具。

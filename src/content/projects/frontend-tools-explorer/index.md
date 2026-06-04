@@ -12,6 +12,10 @@ tags:
 demoUrl: https://frontend-tools-explorer.vercel.app
 repoUrl: https://github.com/wilsonwangdev/frontend-tools-explorer
 image: "/thumbnails/frontend-tools-explorer.jpg"
+body_en: |
+  A curated directory of 40+ modern frontend tools, libraries, and frameworks with instant search and category filtering.
+
+  Covers UI frameworks, build tools, testing, package managers, runtimes, linters, and more. Built with Astro 5 and Tailwind CSS 3. Supports keyboard navigation and screen readers.
 ---
 
 Frontend Tools Explorer 是一个精选的前端工具目录，收录 40+ 个现代前端工具、库和框架，提供即时搜索和分类过滤。

@@ -91,7 +91,7 @@ export const ui = {
  */
 export function t(locale: string, key: string, ...args: string[]): string {
   const lang = (locale in ui ? locale : defaultLang) as Lang
-  let text = ui[lang]?.[key as keyof typeof ui[typeof lang]] || key
+  let text: string = (ui[lang]?.[key as keyof typeof ui[typeof lang]] || key) as string
   args.forEach((arg, i) => {
     text = text.replace(`{${i}}`, arg)
   })

@@ -2,6 +2,7 @@
   "name": "wilson-portfolio",
   "type": "module",
   "version": "1.0.0",
+  "packageManager": "pnpm@10.23.0",
   "scripts": {
     "dev": "astro dev",
     "dev:network": "astro dev --host",

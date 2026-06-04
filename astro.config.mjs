@@ -8,7 +8,7 @@ export default defineConfig({
   site: "https://www.wilsonhandbook.online",
   integrations: [mdx(), solidJs(), tailwind({ applyBaseStyles: false })],
   i18n: {
-    defaultLocale: "zh",
+    defaultLocale: "en",
     locales: ["en", "zh"],
     routing: {
       prefixDefaultLocale: true,

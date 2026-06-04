@@ -26,9 +26,10 @@ import Container from "@components/Container.astro"
           LINKS.map((LINK) => {
             const href = `/${currentLocale}${LINK.HREF}`
             const isActive = pathname === href || `/${currentLocale}${LINK.HREF}` === `/${currentLocale}${pathname.replace(/\/$/, "")}`
+            const label = LINK.HREF === "/" || LINK.HREF === "" ? t("nav.home") : t("nav.projects")
             return (
               <a href={href} class={cn("h-8 rounded-full px-3 text-current", "flex items-center justify-center", "transition-colors duration-300 ease-in-out", isActive ? "bg-black dark:bg-white text-white dark:text-black" : "hover:bg-black/5 dark:hover:bg-white/20 hover:text-black dark:hover:text-white")}>
-                {LINK.TEXT}
+                {label}
               </a>
             )
           })

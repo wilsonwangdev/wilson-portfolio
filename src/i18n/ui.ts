@@ -22,16 +22,22 @@ export const ui = {
     "home.projects": "Projects",
     "home.projects.all": "All projects →",
     "home.built": "Built with",
-    "home.connect": "Connect",
     "projects.title": "Projects",
     "projects.description": "Things built and shipped.",
     "projects.search": "Search",
-    "projects.tags": "TAGS",
-    "projects.sort.asc": "ASCENDING",
-    "projects.sort.desc": "DESCENDING",
+    "projects.tags": "Tags",
+    "projects.sort.asc": "Ascending",
+    "projects.sort.desc": "Descending",
+    "projects.showing": "Showing {0} of {1} {2}",
     "search.title": "Search",
     "search.description": "Search all projects.",
     "search.placeholder": "Type to search...",
+    "search.found": "Found {0} results for '{1}'",
+    "article.back": "Back to projects",
+    "article.demo": "See Demo",
+    "article.repo": "See Repository",
+    "article.prev": "Prev",
+    "article.next": "Next",
     "footer.back": "Back to top",
     "footer.deployed": "Deployed",
     "footer.built": "Built with",
@@ -54,16 +60,22 @@ export const ui = {
     "home.projects": "项目",
     "home.projects.all": "全部项目 →",
     "home.built": "技术栈",
-    "home.connect": "联系方式",
     "projects.title": "项目",
     "projects.description": "做过的项目。",
     "projects.search": "搜索",
     "projects.tags": "标签",
     "projects.sort.asc": "升序",
     "projects.sort.desc": "降序",
+    "projects.showing": "显示 {0} / {1} 个项目",
     "search.title": "搜索",
     "search.description": "搜索所有项目。",
     "search.placeholder": "输入关键词...",
+    "search.found": "找到 {0} 条结果：「{1}」",
+    "article.back": "返回项目列表",
+    "article.demo": "在线演示",
+    "article.repo": "查看仓库",
+    "article.prev": "上一篇",
+    "article.next": "下一篇",
     "footer.back": "回到顶部",
     "footer.deployed": "部署于",
     "footer.built": "基于",
@@ -73,9 +85,22 @@ export const ui = {
   },
 } as const satisfies Record<Lang, Record<string, string>>
 
-export function useTranslations(locale: string) {
+/**
+ * Server-side: use in Astro components with `Astro.currentLocale`.
+ * Client-side: import `t` directly and pass locale + key.
+ */
+export function t(locale: string, key: string, ...args: string[]): string {
   const lang = (locale in ui ? locale : defaultLang) as Lang
-  return function t(key: string): string {
-    return ui[lang][key as keyof typeof ui[typeof lang]] || key
+  let text = ui[lang]?.[key as keyof typeof ui[typeof lang]] || key
+  args.forEach((arg, i) => {
+    text = text.replace(`{${i}}`, arg)
+  })
+  return text
+}
+
+/** Convenience wrapper for Astro components. */
+export function useTranslations(locale: string) {
+  return function translate(key: string, ...args: string[]): string {
+    return t(locale, key, ...args)
   }
 }

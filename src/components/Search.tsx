@@ -3,6 +3,7 @@ import { createEffect, createSignal } from "solid-js"
 import Fuse from "fuse.js"
 import ArrowCard from "@components/ArrowCard"
 import SearchBar from "@components/SearchBar"
+import { t } from "@i18n/ui"
 
 type Props = {
   data: CollectionEntry<"projects">[]
@@ -33,11 +34,8 @@ export default function Search({ data, locale = "zh" }: Props) {
     setQuery(target.value)
   }
 
-  const isZh = locale === "zh"
-  const placeholder = isZh ? "输入关键词搜索..." : "What are you looking for?"
-  const foundText = isZh
-    ? `找到 ${results().length} 条结果：「${query()}」`
-    : `Found ${results().length} results for '${query()}'`
+  const placeholder = t(locale, "search.placeholder")
+  const foundText = t(locale, "search.found", String(results().length), query())
 
   return (
     <div class="flex flex-col">

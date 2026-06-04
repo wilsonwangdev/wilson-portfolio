@@ -1,13 +1,15 @@
 ---
 import { type CollectionEntry, getCollection } from "astro:content"
 
+import { useTranslations } from "@i18n/ui"
+
 type Props = {
   entry: CollectionEntry<"projects">
   locale?: string
 }
 
-// Get the requested entry
 const { entry, locale = "zh" } = Astro.props
+const t = useTranslations(locale)
 const { collection } = entry
 const { Content } = await entry.render()
 
@@ -30,7 +32,7 @@ const next = index < items.length - 1 ? items[index + 1] : null
         <div class="order-2 w-full h-full group-hover:text-black group-hover:dark:text-white blend">
           <div class="flex flex-wrap gap-2">
             <div class="text-sm uppercase">
-              {locale === "zh" ? "上一篇" : "Prev"}
+              {t("article.prev")}
             </div>
           </div>
           <div class="font-semibold mt-3 text-black dark:text-white">
@@ -49,7 +51,7 @@ const next = index < items.length - 1 ? items[index + 1] : null
       <a href={`/${locale}/${next.collection}/${next.slug}`} class="group p-4 gap-3 flex items-center border rounded-lg hover:bg-black/5 hover:dark:bg-white/10 border-black/15 dark:border-white/20 transition-colors duration-300 ease-in-out">
         <div class="w-full h-full text-right group-hover:text-black group-hover:dark:text-white blend">
           <div class="text-sm uppercase">
-            {locale === "zh" ? "下一篇" : "Next"}
+            {t("article.next")}
           </div>
           <div class="font-semibold mt-3 text-black dark:text-white">
             {next.data.title}

@@ -15,9 +15,10 @@ const subpath = pathname.match(/[^/]+/g)
       LINKS.map((LINK) => {
         const href = `/${currentLocale}${LINK.HREF}`
         const isActive = pathname === href
+        const label = LINK.HREF === "/" || LINK.HREF === "" ? t("nav.home") : t("nav.projects")
         return (
           <a href={href} class={cn("flex items-center justify-center px-3 py-1 rounded-full", "text-current hover:text-black dark:hover:text-white", "hover:bg-black/5 dark:hover:bg-white/20", "transition-colors duration-300 ease-in-out", isActive ? "pointer-events-none bg-black dark:bg-white text-white dark:text-black" : "")}>
-            {LINK.TEXT}
+            {label}
           </a>
         )
       })

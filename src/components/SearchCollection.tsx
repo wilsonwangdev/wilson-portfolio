@@ -4,6 +4,7 @@ import Fuse from "fuse.js"
 import ArrowCard from "@components/ArrowCard"
 import { cn } from "@lib/utils"
 import SearchBar from "@components/SearchBar"
+import { t } from "@i18n/ui"
 
 type Props = {
   entry_name: string
@@ -68,13 +69,10 @@ export default function SearchCollection({ entry_name, data, tags, locale = "zh"
     }
   })
 
-  const isZh = locale === "zh"
-  const showingText = isZh
-    ? `显示 ${collection().length} / ${data.length} 个项目`
-    : `SHOWING ${collection().length} OF ${data.length} ${entry_name}`
-  const sortText = descending() ? (isZh ? "降序" : "DESCENDING") : (isZh ? "升序" : "ASCENDING")
-  const tagsLabel = isZh ? "标签" : "TAGS"
-  const searchPlaceholder = isZh ? "搜索项目" : `Search ${entry_name}`
+  const showingText = t(locale, "projects.showing", String(collection().length), String(data.length), entry_name)
+  const sortText = descending() ? t(locale, "projects.sort.desc") : t(locale, "projects.sort.asc")
+  const tagsLabel = t(locale, "projects.tags")
+  const searchPlaceholder = t(locale, "search.placeholder")
 
   return (
     <div class="grid grid-cols-1 sm:grid-cols-3 gap-6">

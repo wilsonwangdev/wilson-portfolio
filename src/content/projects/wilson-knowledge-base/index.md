@@ -1,7 +1,7 @@
 ---
 title: "Wilson Knowledge Base"
 summary: "AI 辅助整理的技术阅读笔记与开源项目发现 — 基于 Quartz，支持全文搜索、双向链接、RSS 与邮件订阅。"
-summary_en: "AI-assisted reading notes and open source project discoveries — built on Quartz with full-text search, wikilinks, RSS and email subscriptions."
+summary_en: "AI-assisted technical reading notes and open source project discoveries — built on Quartz with full-text search, wikilinks, RSS and email subscriptions."
 date: "May 15 2026"
 draft: false
 tags:
@@ -14,6 +14,6 @@ repoUrl: https://github.com/wilsonwangdev/wilson-knowledge-base
 image: "/thumbnails/wilson-knowledge-base.jpg"
 ---
 
-Wilson Knowledge Base 是个人知识管理系统的实践。核心流程：Agent 抓取感兴趣的文章 → 自动总结为结构化笔记 → Quartz v4 构建静态站点 → 部署到 Vercel（中国可访问）。
+Wilson Knowledge Base 是个人知识管理的实践。核心流程：人工策展 + AI 辅助整理 → 结构化笔记 → Quartz v4.5.2 构建静态站点 → 部署 Vercel。
 
-特点：全局自定义字体（无 Google Fonts 依赖）、全文 RSS、邮件订阅集成、自定义侧边栏导航、移动端优化。所有笔记按用户设定顺序排列，支持中英双语。
+特点：FlexSearch 全文搜索、Obsidian 风格 `[[wikilinks]]` 双向链接、Giscus 评论系统、全文 RSS、邮件订阅集成、阅读模式。中英双语，移动端适配，自托管字体（无 Google Fonts 依赖）。

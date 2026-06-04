@@ -1,7 +1,7 @@
 ---
 title: "Agent Master Handbook"
-summary: "AI agent 实战知识库与基础设施 — 概念指南、精选文章、可复用的 agent-ready 规范与模式。双语静态站点。"
-summary_en: "AI agent knowledge base and infrastructure — concept guides, curated articles, and reusable agent-ready specs and patterns. Bilingual static site."
+summary: "面向 agent 实践者的 AI Native 手册与可复用基础设施 — 概念指南、精选文章、agent-ready 规范与模式。双语静态站点。"
+summary_en: "An AI Native handbook and reusable infrastructure for agent practitioners — concept guides, curated articles, agent-ready specs and patterns. Bilingual static site."
 date: "May 20 2026"
 draft: false
 tags:
@@ -14,6 +14,6 @@ repoUrl: https://github.com/wilsonwangdev/agent-master-handbook
 image: "/thumbnails/agent-master-handbook.jpg"
 ---
 
-Agent Master Handbook 是一份面向 AI 智能体开发者的系统性指南，涵盖了从 prompt engineering 基础到复杂 multi-agent 架构的全链路知识。站点基于 Astro Starlight 构建，支持中英双语，内容持续迭代。
+Agent Master Handbook 是一份面向 agent 实践者的知识体系与可复用基础设施，涵盖 harness engineering、context engineering、MCP 等核心概念。站点同时提供技能（skills）、规则（rules）、规范（specs）、模式（patterns）等可直接嵌入项目使仓库 agent-ready 的模块。
 
-核心模块包括：Agent 基础概念、工具调用 (Tool Use)、记忆系统 (Memory)、多智能体协作 (Multi-Agent)、安全与对齐等。每个模块配有可运行的代码示例和架构图。
+站点从零构建，仅依赖 `marked` 做 Markdown 渲染，中英双语，dogfood 自身方法论。

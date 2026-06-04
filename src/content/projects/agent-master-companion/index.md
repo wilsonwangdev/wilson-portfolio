@@ -14,6 +14,6 @@ repoUrl: https://github.com/wilsonwangdev/agent-master-companion
 image: "/thumbnails/agent-master-companion.jpg"
 ---
 
-Agent Master Companion 是 Agent Master Handbook 的命令行伴侣，将手册中的概念转化为可直接使用的本地工具。支持任务模板、agent 配置管理、工作流编排等功能。
+Agent Master Companion 是一个轻量级 macOS 菜单栏应用，专为 agent 实践者设计。支持扫描项目文件夹，发现并浏览 agent 相关的指令、上下文和规则文件，覆盖 Claude Code、Cursor、Copilot、Codex 等 14 种工具。
 
-设计理念：CLI-first，零配置启动，与 Agent Master Handbook 文档站点深度联动。
+内置便签本，可在等待 agent 响应时随手记录，选中笔记直接组合成下一次 prompt。Swift + SwiftUI 构建，零网络请求。

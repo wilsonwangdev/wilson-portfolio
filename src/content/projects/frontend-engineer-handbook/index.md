@@ -1,7 +1,7 @@
 ---
 title: "Frontend Engineer Handbook"
-summary: "AI 时代前端学习路线 — 2026 必备知识、AI 可委托清单、动手实践。施工中，当前完成第 0–1 章。"
-summary_en: "Frontend learning roadmap for the AI era — 2026 essentials, AI delegable task list, and hands-on practice. WIP, chapters 0–1 complete."
+summary: "AI 时代前端工程师中文精编手册 — 2026 必备知识、AI 可委托清单、动手实践。覆盖入门到资深三层读者。"
+summary_en: "A concise Chinese-language frontend engineering handbook for the AI era — 2026 essentials, AI delegable task list, hands-on practice. Three reader tiers from beginner to senior."
 date: "May 10 2026"
 draft: false
 tags:
@@ -14,6 +14,6 @@ repoUrl: https://github.com/wilsonwangdev/frontend-engineer-handbook
 image: "/thumbnails/frontend-engineer-handbook.jpg"
 ---
 
-Frontend Engineer Handbook 是一份面向中级以上前端工程师的进阶指南。内容不止于 API 文档，更深入工程实践：构建工具链原理、性能优化方法论、常见架构模式、核心库源码解读。
+Frontend Engineer Handbook 是一本中文精编手册，主题是 AI 时代前端工程师的必要学习路线与核心知识点。它做三件事：告诉你 2026 年必须知道的事（以及什么不再需要学）、给出 AI 可委托清单、提供通过构建 mini bundler / mini framework / mini agent app 的动手实践。
 
-站点基于 VitePress 构建，采用文档站组织方式，章节清晰，配有可运行的示例仓库。
+面向新入行/转行、1–3 年经验、资深工程师三层读者。基于 Next.js 16 + React 19 + Tailwind CSS 4 构建。

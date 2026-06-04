@@ -3,10 +3,11 @@ import { type CollectionEntry, getCollection } from "astro:content"
 
 type Props = {
   entry: CollectionEntry<"projects">
+  locale?: string
 }
 
 // Get the requested entry
-const { entry } = Astro.props
+const { entry, locale = "zh" } = Astro.props
 const { collection } = entry
 const { Content } = await entry.render()
 
@@ -25,11 +26,11 @@ const next = index < items.length - 1 ? items[index + 1] : null
   </article>
   <div class="grid grid-cols-1 sm:grid-cols-2 gap-4">
     {prev ? (
-      <a href={`/${prev.collection}/${prev.slug}`} class="group p-4 gap-3 flex items-center border rounded-lg hover:bg-black/5 hover:dark:bg-white/10 border-black/15 dark:border-white/20 blend">
+      <a href={`/${locale}/${prev.collection}/${prev.slug}`} class="group p-4 gap-3 flex items-center border rounded-lg hover:bg-black/5 hover:dark:bg-white/10 border-black/15 dark:border-white/20 blend">
         <div class="order-2 w-full h-full group-hover:text-black group-hover:dark:text-white blend">
           <div class="flex flex-wrap gap-2">
             <div class="text-sm uppercase">
-              Prev
+              {locale === "zh" ? "上一篇" : "Prev"}
             </div>
           </div>
           <div class="font-semibold mt-3 text-black dark:text-white">
@@ -45,10 +46,10 @@ const next = index < items.length - 1 ? items[index + 1] : null
       <div />
     )}
     {next ? (
-      <a href={`/${next.collection}/${next.slug}`} class="group p-4 gap-3 flex items-center border rounded-lg hover:bg-black/5 hover:dark:bg-white/10 border-black/15 dark:border-white/20 transition-colors duration-300 ease-in-out">
+      <a href={`/${locale}/${next.collection}/${next.slug}`} class="group p-4 gap-3 flex items-center border rounded-lg hover:bg-black/5 hover:dark:bg-white/10 border-black/15 dark:border-white/20 transition-colors duration-300 ease-in-out">
         <div class="w-full h-full text-right group-hover:text-black group-hover:dark:text-white blend">
           <div class="text-sm uppercase">
-            Next
+            {locale === "zh" ? "下一篇" : "Next"}
           </div>
           <div class="font-semibold mt-3 text-black dark:text-white">
             {next.data.title}

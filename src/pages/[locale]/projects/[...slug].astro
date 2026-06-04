@@ -6,30 +6,31 @@ import BottomLayout from "@layouts/BottomLayout.astro"
 import ArticleTopLayout from "@layouts/ArticleTopLayout.astro"
 import ArticleBottomLayout from "@layouts/ArticleBottomLayout.astro"
 
-// Create the static projects pages
 export async function getStaticPaths() {
-	const projects = await getCollection("projects")
-	return projects.map((project) => ({
-		params: { slug: project.slug },
-		props: project,
-	}))
+  const projects = await getCollection("projects")
+  return projects.flatMap((project) => [
+    { params: { locale: "en", slug: project.slug } },
+    { params: { locale: "zh", slug: project.slug } },
+  ])
 }
 
-// Get the requested project
-type Props = CollectionEntry<"projects">
-const project = Astro.props
-const { title, summary } = project.data
+const { locale, slug } = Astro.params
+const projects = await getCollection("projects")
+const project = projects.find(p => p.slug === slug)!
+
+const { title } = project.data
+const summary = locale === "en" ? project.data.summary_en : project.data.summary
 ---
 
 <PageLayout title={title} description={summary}>
   <TopLayout>
     <div class="animate">
-      <ArticleTopLayout entry={project} />
+      <ArticleTopLayout entry={project} locale={locale} />
     </div>
   </TopLayout>
   <BottomLayout>
     <div class="animate">
-      <ArticleBottomLayout entry={project} />
+      <ArticleBottomLayout entry={project} locale={locale} />
     </div>
   </BottomLayout>
 </PageLayout>

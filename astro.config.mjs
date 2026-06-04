@@ -7,6 +7,13 @@ import solidJs from "@astrojs/solid-js"
 export default defineConfig({
   site: "https://www.wilsonhandbook.online",
   integrations: [mdx(), solidJs(), tailwind({ applyBaseStyles: false })],
+  i18n: {
+    defaultLocale: "zh",
+    locales: ["en", "zh"],
+    routing: {
+      prefixDefaultLocale: true,
+    },
+  },
   vite: {
     server: {
       allowedHosts: [".tailc65cd9.ts.net"],

@@ -1,6 +1,7 @@
 ---
 title: "Agent Master Handbook"
 summary: "AI agent 实战知识库与基础设施 — 概念指南、精选文章、可复用的 agent-ready 规范与模式。双语静态站点。"
+summary_en: "AI agent knowledge base and infrastructure — concept guides, curated articles, and reusable agent-ready specs and patterns. Bilingual static site."
 date: "May 20 2026"
 draft: false
 tags:

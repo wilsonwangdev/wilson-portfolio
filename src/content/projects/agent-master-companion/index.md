@@ -1,6 +1,7 @@
 ---
 title: "Agent Master Companion"
 summary: "macOS 菜单栏工具 — 浏览和管理各项目的 agent 指令文件（CLAUDE.md 等），附带便签本。完全离线，注重隐私。"
+summary_en: "macOS menubar utility — browse and manage agent instruction files (CLAUDE.md, etc.) across projects, with a built-in scratch pad. Fully offline, privacy-first."
 date: "May 5 2026"
 draft: false
 tags:

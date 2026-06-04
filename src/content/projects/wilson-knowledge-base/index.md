@@ -1,6 +1,7 @@
 ---
 title: "Wilson Knowledge Base"
 summary: "AI 辅助整理的技术阅读笔记与开源项目发现 — 基于 Quartz，支持全文搜索、双向链接、RSS 与邮件订阅。"
+summary_en: "AI-assisted reading notes and open source project discoveries — built on Quartz with full-text search, wikilinks, RSS and email subscriptions."
 date: "May 15 2026"
 draft: false
 tags:

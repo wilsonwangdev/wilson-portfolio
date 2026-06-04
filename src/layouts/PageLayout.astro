@@ -6,10 +6,12 @@ import Footer from "@components/Footer.astro"
 import Drawer from "@components/Drawer.astro"
 const { title, description } = Astro.props
 import { SITE } from "@consts"
+
+const currentLocale = Astro.currentLocale || "zh"
 ---
 
 <!doctype html>
-<html lang="en">
+<html lang={currentLocale}>
   <head>
     <BaseHead title={`${title} | ${SITE.TITLE}`} description={description} />
   </head>

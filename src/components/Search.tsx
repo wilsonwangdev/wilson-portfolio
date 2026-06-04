@@ -6,14 +6,15 @@ import SearchBar from "@components/SearchBar"
 
 type Props = {
   data: CollectionEntry<"projects">[]
+  locale?: string
 }
 
-export default function Search({ data }: Props) {
+export default function Search({ data, locale = "zh" }: Props) {
   const [query, setQuery] = createSignal("")
   const [results, setResults] = createSignal<CollectionEntry<"projects">[]>([])
 
   const fuse = new Fuse(data, {
-    keys: ["slug", "data.title", "data.summary", "data.tags"],
+    keys: ["slug", "data.title", "data.summary", "data.summary_en", "data.tags"],
     includeMatches: true,
     minMatchCharLength: 2,
     threshold: 0.4,
@@ -32,19 +33,25 @@ export default function Search({ data }: Props) {
     setQuery(target.value)
   }
 
+  const isZh = locale === "zh"
+  const placeholder = isZh ? "输入关键词搜索..." : "What are you looking for?"
+  const foundText = isZh
+    ? `找到 ${results().length} 条结果：「${query()}」`
+    : `Found ${results().length} results for '${query()}'`
+
   return (
     <div class="flex flex-col">
-      <SearchBar onSearchInput={onSearchInput} query={query} setQuery={setQuery} placeholderText="What are you looking for?" />
+      <SearchBar onSearchInput={onSearchInput} query={query} setQuery={setQuery} placeholderText={placeholder} />
 
       {(query().length >= 2 && results().length >= 1) && (
         <div class="mt-12">
           <div class="text-sm uppercase mb-2">
-            Found {results().length} results for {`'${query()}'`}
+            {foundText}
           </div>
           <ul class="flex flex-col gap-3">
             {results().map(result => (
               <li>
-                <ArrowCard entry={result} pill={true} />
+                <ArrowCard entry={result} pill={true} locale={locale} />
               </li>
             ))}
           </ul>

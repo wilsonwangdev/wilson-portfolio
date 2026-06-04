@@ -4,12 +4,14 @@ import type { CollectionEntry } from "astro:content"
 type Props = {
   entry: CollectionEntry<"projects">
   pill?: boolean
+  locale?: string
 }
 
-export default function ArrowCard({ entry, pill }: Props) {
+export default function ArrowCard({ entry, pill, locale = "zh" }: Props) {
   const image = entry.data.image
+  const summary = locale === "en" ? entry.data.summary_en : entry.data.summary
   return (
-    <a href={`/${entry.collection}/${entry.slug}`} class="group p-4 gap-3 flex items-center border rounded-lg hover:bg-black/5 hover:dark:bg-white/10 border-black/15 dark:border-white/20 transition-colors duration-300 ease-in-out">
+    <a href={`/${locale}/${entry.collection}/${entry.slug}`} class="group p-4 gap-3 flex items-center border rounded-lg hover:bg-black/5 hover:dark:bg-white/10 border-black/15 dark:border-white/20 transition-colors duration-300 ease-in-out">
       {image && (
         <img src={image} alt={entry.data.title} class="shrink-0 w-24 h-14 object-cover rounded border border-black/10 dark:border-white/10" loading="lazy" />
       )}
@@ -26,7 +28,7 @@ export default function ArrowCard({ entry, pill }: Props) {
         </div>
 
         <div class="text-sm line-clamp-2">
-          {entry.data.summary}
+          {summary}
         </div>
         <ul class="flex flex-wrap mt-2 gap-1">
           {entry.data.tags.map((tag: string) => (

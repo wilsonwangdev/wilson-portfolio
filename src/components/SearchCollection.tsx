@@ -9,16 +9,17 @@ type Props = {
   entry_name: string
   tags: string[]
   data: CollectionEntry<"projects">[]
+  locale?: string
 }
 
-export default function SearchCollection({ entry_name, data, tags }: Props) {
+export default function SearchCollection({ entry_name, data, tags, locale = "zh" }: Props) {
   const [query, setQuery] = createSignal("");
   const [filter, setFilter] = createSignal(new Set<string>())
   const [collection, setCollection] = createSignal<CollectionEntry<"projects">[]>([])
   const [descending, setDescending] = createSignal(false);
 
   const fuse = new Fuse(data, {
-    keys: ["slug", "data.title", "data.summary", "data.tags"],
+    keys: ["slug", "data.title", "data.summary", "data.summary_en", "data.tags"],
     includeMatches: true,
     minMatchCharLength: 2,
     threshold: 0.4,
@@ -67,15 +68,23 @@ export default function SearchCollection({ entry_name, data, tags }: Props) {
     }
   })
 
+  const isZh = locale === "zh"
+  const showingText = isZh
+    ? `显示 ${collection().length} / ${data.length} 个项目`
+    : `SHOWING ${collection().length} OF ${data.length} ${entry_name}`
+  const sortText = descending() ? (isZh ? "降序" : "DESCENDING") : (isZh ? "升序" : "ASCENDING")
+  const tagsLabel = isZh ? "标签" : "TAGS"
+  const searchPlaceholder = isZh ? "搜索项目" : `Search ${entry_name}`
+
   return (
     <div class="grid grid-cols-1 sm:grid-cols-3 gap-6">
       {/* Control Panel*/}
       <div class="col-span-3 sm:col-span-1">
         <div class="sticky top-24 mt-7">
           {/* Search Bar */}
-          <SearchBar onSearchInput={onSearchInput} query={query} setQuery={setQuery} placeholderText={`Search ${entry_name}`} />
+          <SearchBar onSearchInput={onSearchInput} query={query} setQuery={setQuery} placeholderText={searchPlaceholder} />
           {/* Tag Filters */}
-          <div class="relative flex flex-row justify-between w-full"><p class="text-sm font-semibold uppercase my-4 text-black dark:text-white">Tags</p>
+          <div class="relative flex flex-row justify-between w-full"><p class="text-sm font-semibold uppercase my-4 text-black dark:text-white">{tagsLabel}</p>
             {filter().size > 0 && (
               <button
                 onClick={clearFilters}
@@ -135,11 +144,11 @@ export default function SearchCollection({ entry_name, data, tags }: Props) {
           {/* Info Bar */}
           <div class='flex justify-between flex-row mb-2'>
             <div class="text-sm uppercase">
-              SHOWING {collection().length} OF {data.length} {entry_name}
+              {showingText}
             </div>
             <button onClick={toggleDescending} class='flex items-center flex-row gap-1 stroke-neutral-400 dark:stroke-neutral-500 hover:stroke-neutral-600 hover:dark:stroke-neutral-300 text-neutral-400 dark:text-neutral-500 hover:text-neutral-600 hover:dark:text-neutral-300'>
               <div class="text-sm uppercase">
-                {descending() ? "DESCENDING" : "ASCENDING"}
+                {sortText}
               </div>
               <svg
                 class="size-5 left-2 top-[0.45rem]"
@@ -152,7 +161,7 @@ export default function SearchCollection({ entry_name, data, tags }: Props) {
           <ul class="flex flex-col gap-3">
             {collection().map((entry) => (
               <li>
-                <ArrowCard entry={entry} />
+                <ArrowCard entry={entry} locale={locale} />
               </li>
             ))}
           </ul>

@@ -4,7 +4,15 @@ import PageLayout from "@layouts/PageLayout.astro";
 import TopLayout from "@layouts/TopLayout.astro";
 import BottomLayout from "@layouts/BottomLayout.astro";
 import SearchCollection from "@components/SearchCollection";
-import { PROJECTS } from "@consts";
+import { useTranslations } from "@i18n/ui";
+
+export function getStaticPaths() {
+  return [{ params: { locale: "en" } }, { params: { locale: "zh" } }]
+}
+
+const { locale } = Astro.params
+const t = useTranslations(locale)
+
 const projects = (await getCollection("projects"))
   .filter((project) => !project.data.draft)
   .sort((a, b) => b.data.date.getTime() - a.data.date.getTime());
@@ -17,14 +25,14 @@ const estimated_initial_size =
   28 + projects.length * 158 + (projects.length - 1) * 12;
 ---
 
-<PageLayout title={PROJECTS.TITLE} description={PROJECTS.DESCRIPTION}>
+<PageLayout title={t("projects.title")} description={t("projects.description")}>
   <TopLayout>
     <div class="animate">
       <h1 class="text-3xl font-semibold text-black dark:text-white mt-2">
-        {PROJECTS.TITLE}
+        {t("projects.title")}
       </h1>
       <div class="mt-1">
-        {PROJECTS.DESCRIPTION}
+        {t("projects.description")}
       </div>
     </div>
   </TopLayout>
@@ -39,6 +47,7 @@ const estimated_initial_size =
         entry_name={"projects"}
         tags={tags}
         data={projects}
+        locale={locale}
       />
     </div>
   </BottomLayout>

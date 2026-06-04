@@ -1,6 +1,7 @@
 ---
 title: "Frontend Engineer Handbook"
 summary: "AI 时代前端学习路线 — 2026 必备知识、AI 可委托清单、动手实践。施工中，当前完成第 0–1 章。"
+summary_en: "Frontend learning roadmap for the AI era — 2026 essentials, AI delegable task list, and hands-on practice. WIP, chapters 0–1 complete."
 date: "May 10 2026"
 draft: false
 tags:
